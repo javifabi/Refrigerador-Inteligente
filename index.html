@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refrigerador Inteligente IoT</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🧊 Refrigerador Inteligente</h1>
+        <p>Panel de Control IoT</p>
+    </header>
+
+    <main>
+
+        <section class="panel">
+            <h2>Estado del Refrigerador</h2>
+
+            <section class="panel refrigerador-panel">
+    <h2>🧊 Simulación del Refrigerador</h2>
+
+    <div class="refrigerador">
+
+        <!-- Pantalla digital -->
+        <div class="pantalla-refri">
+            <span id="temperaturaVisual">4</span> °C
+        </div>
+
+    <div class="puerta-superior">
+        <div class="marca">SMART FRIDGE</div>
+        <div class="manilla"></div>
+
+        <div id="interiorProductos"></div>
+    </div>
+
+        <!-- Parte inferior -->
+        <div class="puerta-inferior">
+            <div class="manilla"></div>
+        </div>
+
+    </div>
+
+    <p id="mensajeVisual">
+        Refrigerador cerrado
+    </p>
+</section> 
+
+            <div class="dato">
+                <h3>🌡️ Temperatura</h3>
+                <p><span id="temperatura">4</span> °C</p>
+
+                <button onclick="bajarTemperatura()">−</button>
+                <button onclick="subirTemperatura()">+</button>
+            </div>
+
+            <div class="dato">
+                <h3>🚪 Puerta</h3>
+                <p id="estadoPuerta">Cerrada</p>
+
+                <button onclick="cambiarPuerta()">
+                    Abrir / Cerrar
+                </button>
+            </div>
+
+            <div class="dato">
+                <h3>💡 Luz Interior</h3>
+                <p id="estadoLuz">Apagada</p>
+
+                <button onclick="cambiarLuz()">
+                    Encender / Apagar
+                </button>
+            </div>
+
+        </section>
+
+
+        <section class="panel">
+            <h2>Productos almacenados</h2>
+
+            <input
+                type="text"
+                id="producto"
+                placeholder="Nombre del producto"
+            >
+
+            <button onclick="agregarProducto()">
+                Agregar producto
+            </button>
+
+            <ul id="listaProductos">
+            </ul>
+
+        </section>
+
+
+        <section class="panel">
+            <h2>⚠️ Sistema de Alertas</h2>
+
+            <p id="alerta">
+                Sistema funcionando correctamente
+            </p>
+
+        </section>
+
+<section class="panel">
+    <h2>📋 Historial de Eventos</h2>
+
+    <div class="historial-controles">
+        <p>Actividad reciente del refrigerador inteligente</p>
+
+        <button onclick="limpiarHistorial()" class="btn-limpiar">
+            Limpiar historial
+        </button>
+    </div>
+
+    <ul id="historialEventos" class="historial">
+    </ul>
+</section>
+
+    </main>
+
+    <footer>
+        <p>Proyecto Refrigerador Inteligente - IoT</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+<section class="panel">
+    <h2>📡 Sensores IoT</h2>
+
+    <div class="sensores">
+
+        <div class="sensor">
+            <h3>🌡️ Sensor de Temperatura</h3>
+            <p><span id="sensorTemperatura">4</span> °C</p>
+            <small>Sensor activo</small>
+        </div>
+
+        <div class="sensor">
+            <h3>💧 Sensor de Humedad</h3>
+            <p><span id="sensorHumedad">65</span> %</p>
+            <small>Sensor activo</small>
+        </div>
+
+        <div class="sensor">
+            <h3>🚪 Sensor de Puerta</h3>
+            <p id="sensorPuerta">Cerrada</p>
+            <small>Sensor activo</small>
+        </div>
+
+    </div>
+    
+    <div class="conexion-iot">
+    <h3>📶 Conexión IoT</h3>
+
+    <p>
+        Estado:
+        <span id="estadoConexion" class="conectado">
+            ● Conectado
+        </span>
+    </p>
+
+    <button id="btnConexion" onclick="cambiarConexion()">
+        Desconectar
+    </button>
+</div>
+
+</section>
